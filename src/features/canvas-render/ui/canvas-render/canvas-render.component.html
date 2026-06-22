@@ -1,0 +1,22 @@
+<div class="canvas-wrapper" [style.width]="width() + 'px'" [style.height]="height() + 'px'">
+  <canvas
+    #canvas
+    [width]="width()"
+    [height]="height()"
+    (click)="onCanvasClick($event)"
+    (mousedown)="onMouseDown($event)"
+    (mousemove)="onMouseMove($event)"
+    (mouseup)="onMouseUp($event)"
+    (mouseleave)="onMouseLeave($event)"
+    (wheel)="onWheel($event)"
+  ></canvas>
+
+  <!-- Информация о состоянии (для отладки) -->
+  @if (debugMode()) {
+    <div class="debug-info">
+      <span>Фигур: {{ shapes().length }}</span>
+      <span>Zoom: {{ zoom().toFixed(2) }}x</span>
+      <span>Pan: ({{ panX().toFixed(0) }}, {{ panY().toFixed(0) }})</span>
+    </div>
+  }
+</div>
