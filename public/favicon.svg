@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90D9; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#357ABD; stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="letterC" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E8F0FE; stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Круглый фон -->
+  <circle cx="256" cy="256" r="240" fill="url(#bgGradient)" />
+
+  <!-- Внешний ободок (для стиля) -->
+  <circle cx="256" cy="256" r="230" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="4" />
+
+  <!-- Буква "С" - контурная (обводка), стильная -->
+  <!-- Используем path для создания идеальной полуокружности -->
+  <path d="M 320 160
+           A 96 96 0 0 0 192 160
+           L 192 192
+           A 64 64 0 0 1 256 128
+           A 64 64 0 0 1 320 192
+           L 320 320
+           A 64 64 0 0 1 256 384
+           A 64 64 0 0 1 192 320
+           L 192 352
+           A 96 96 0 0 0 320 352
+           Z"
+        fill="none"
+        stroke="url(#letterC)"
+        stroke-width="28"
+        stroke-linecap="round"
+        stroke-linejoin="round" />
+
+  <!-- Буква "Е" - заливка (сплошная, контрастная) -->
+  <!-- Вертикальная палочка -->
+  <rect x="340" y="140" width="32" height="232" rx="8" fill="#FFFFFF" />
+
+  <!-- Верхняя горизонтальная палочка -->
+  <rect x="372" y="140" width="60" height="32" rx="8" fill="#FFFFFF" />
+
+  <!-- Средняя горизонтальная палочка -->
+  <rect x="372" y="240" width="48" height="32" rx="8" fill="#FFFFFF" />
+
+  <!-- Нижняя горизонтальная палочка -->
+  <rect x="372" y="340" width="60" height="32" rx="8" fill="#FFFFFF" />
+
+  <!-- Акцент: маленькая точка-подсказка (как курсор мыши) -->
+  <circle cx="420" cy="256" r="6" fill="#FF6B6B" opacity="0.8" />
+</svg>
