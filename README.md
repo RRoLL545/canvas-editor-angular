@@ -1,59 +1,58 @@
-# CanvasEditor
+# 🎨 Canvas Editor
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.3.
+> Легковесный аналог Figma / Miro на чистом фронтенде.
 
-## Development server
+**Canvas Editor** — это веб-приложение для создания и редактирования графических композиций. Проект демонстрирует современный подход к разработке фронтенда с использованием Angular 22, Feature-Sliced Design и реактивного состояния на сигналах.
 
-To start a local development server, run:
+## ✨ Возможности
 
-```bash
-ng serve
-```
+- ✏️ **Рисование фигур:** прямоугольники, стрелки с выбором цвета
+- 🖱️ **Редактирование:** изменение размера и цвета выбранных объектов
+- 🖼️ **Загрузка фона:** установка изображения в качестве подложки
+- 🔍 **Масштабирование:** Zoom (0.1x – 3.0x) и Pan (перемещение по холсту)
+- ↩️ **История действий:** Undo / Redo (отмена и повтор)
+- 💾 **Экспорт:** сохранение композиции в PNG (off-screen rendering)
+- ⌨️ **Горячие клавиши:** управление без мыши
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🏗️ Архитектура
 
-## Code scaffolding
+- **Angular 22** (последняя версия)
+- **Zoneless** (без Zone.js, высокая производительность)
+- **FSD** (Feature-Sliced Design — масштабируемая структура)
+- **Signals** (реактивное состояние без RxJS)
+- **Canvas API** (низкоуровневый рендеринг)
+- **Standalone Components** (без NgModule)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## 🚀 Быстрый старт
 
 ```bash
-ng build
+git clone https://github.com/RRoLL545/canvas-editor-angular.git
+cd canvas-editor
+npm install
+npm start
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 📁 Структура проекта (FSD)
 
-## Running unit tests
+```
+src/app/
+├── shared/       # Переиспользуемые утилиты и UI-компоненты
+├── entities/     # Бизнес-сущности (Shape, Point)
+├── features/     # Сценарии использования (рендеринг, рисование, экспорт)
+├── widgets/      # Композиция фич (холст, тулбар, панель свойств)
+└── pages/        # Страницы приложения
+```
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## 🧪 Тестирование
 
 ```bash
-ng test
+npm test          # Запуск unit-тестов
+npm run test:ci   # Запуск в CI-режиме
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
+## 📦 Сборка
 ```bash
-ng e2e
+npm run build
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
