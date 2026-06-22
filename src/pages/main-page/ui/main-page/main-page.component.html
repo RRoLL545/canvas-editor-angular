@@ -1,0 +1,38 @@
+<div class="main-page">
+  <header class="toolbar">
+    <h1>🎨 Canvas Editor</h1>
+    <div class="actions">
+      <button (click)="addRectangle()" class="btn">➕ Прямоугольник</button>
+      <button (click)="addArrow()" class="btn">➜ Стрелка</button>
+      <button (click)="clearShapes()" class="btn btn-danger">🗑️ Очистить</button>
+      <button (click)="addTestShapes()" class="btn btn-secondary">🧪 Тестовые фигуры</button>
+    </div>
+    <div class="info">
+      <span>Фигур: {{ store.shapes().length }}</span>
+    </div>
+  </header>
+
+  <div class="canvas-container">
+    <app-canvas-render
+      [width]="1000"
+      [height]="650"
+      [shapes]="store.shapes()"
+      [zoom]="store.zoom()"
+      [panX]="store.panX()"
+      [panY]="store.panY()"
+      [backgroundColor]="store.backgroundColor()"
+      [showGrid]="store.showGrid()"
+      [gridSize]="store.gridSize()"
+      [debugMode]="debugMode()"
+      (canvasClick)="onCanvasClick($event)"
+      (canvasWheel)="onCanvasWheel($event)"
+    />
+  </div>
+
+  <footer class="status-bar">
+    <span>🟢 Angular 22 + FSD + Signals</span>
+    <span>Zoom: {{ store.zoom().toFixed(2) }}x</span>
+    <span>Pan: ({{ store.panX().toFixed(0) }}, {{ store.panY().toFixed(0) }})</span>
+    <span>Выбрано: {{ store.selectedIds().length }}</span>
+  </footer>
+</div>
